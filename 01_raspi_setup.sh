@@ -42,3 +42,13 @@ apt-get remove dphys-swapfile dc
 
 /usr/bin/raspi-config do_change_pass          # Interactively set password for your login
 #/usr/bin/raspi-config do_wifi_ssid_passphrase # Interactively configure the wifi network
+
+#Update to latest packages and upgrade
+/usr/bin/aptitude update                      # Update the software package information
+/usr/bin/aptitude upgrade                     # Upgrade installed software to the latest versions
+
+#Cleanup, you should always clean up after an update or a package change.
+/usr/bin/aptitude autoremove
+
+#time to restart
+/sbin/shutdown -r now                         # Reboot after all changes above complete
